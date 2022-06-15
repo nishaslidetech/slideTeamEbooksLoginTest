@@ -41,7 +41,8 @@ public class FacebookLogin extends SetUPClass {
 
 		try {
 			List<WebElement> buyNow = driver.findElements(By.xpath("//input[@class = 'buy-now-btn login-box']"));
-			//WebElement buyNow = SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
+			// WebElement buyNow =
+			// SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
 			buyNow.get(0).click();
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
