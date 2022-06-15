@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import BaseClass.SetUPClass;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.config.WebDriverManagerException;
 
 public class GoogleLogin extends SetUPClass {
@@ -38,7 +38,8 @@ public class GoogleLogin extends SetUPClass {
 	public void click_on_Buynow_option() throws Throwable {
 		try {
 			List<WebElement> buyNow = driver.findElements(By.xpath("//input[@class = 'buy-now-btn login-box']"));
-			//WebElement buyNow = SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
+			// WebElement buyNow =
+			// SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
 			buyNow.get(0).click();
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
@@ -66,13 +67,14 @@ public class GoogleLogin extends SetUPClass {
 		try {
 
 			if (!driver.findElements(By.xpath("//div[@class='BHzsHc']")).isEmpty()) {
-				WebElement another_btn = SetUPClass.elementToBeClickable(By.xpath("//div[text()='Use another account']"));
+				WebElement another_btn = SetUPClass
+						.elementToBeClickable(By.xpath("//div[text()='Use another account']"));
 				another_btn.click();
 			}
 
 			WebElement gmail_email = SetUPClass.elementToBeClickable(By.xpath("//*[@id='identifierId']"));
 
-			gmail_email.sendKeys("nisha.dhiman@slidetech.in");
+			gmail_email.sendKeys("Slidegeekstesting1@gmail.com");
 
 			WebElement next_1 = driver.findElement(By.cssSelector("#identifierNext > div > button > span"));
 
@@ -81,7 +83,7 @@ public class GoogleLogin extends SetUPClass {
 			WebElement gmail_pass = wait.until(ExpectedConditions
 					.elementToBeClickable(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")));
 
-			gmail_pass.sendKeys("Nisha@123");
+			gmail_pass.sendKeys("Qwerty");
 
 			WebElement next_2 = driver.findElement(By.cssSelector("#passwordNext > div > button > span"));
 
@@ -104,7 +106,7 @@ public class GoogleLogin extends SetUPClass {
 				.elementToBeClickable(By.xpath("//button[@class = 'buy-now-btn downloadClick']"));
 		download.click();
 		Thread.sleep(3000);
-		
+
 	}
 
 	@Then("^logout from the application$")
@@ -120,7 +122,6 @@ public class GoogleLogin extends SetUPClass {
 
 	@Then("^verify that user is successfully logged out$")
 	public void verify_that_user_is_successfully_logged_out() throws Throwable {
-		
 
 		// verify whether the account is deleted or not?
 		Thread.sleep(3000);
