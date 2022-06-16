@@ -20,6 +20,7 @@ public class GoogleLogin extends SetUPClass {
 	public void user_is_on_Home_Page() throws Throwable {
 		driver.get(AppURL);
 		ClearBrowserCache();
+		Thread.sleep(5000);
 	}
 
 	@Then("^click on Ebook button$")
