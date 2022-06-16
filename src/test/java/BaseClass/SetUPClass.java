@@ -120,9 +120,11 @@ public class SetUPClass {
 	public static void after_Class() throws InterruptedException {
 		Thread.sleep(2000);
 
-		/*
-		 * if (driver != null) { driver.quit(); Thread.sleep(2000); }
-		 */
+		
+		 if (driver != null) {
+	         driver.quit(); Thread.sleep(2000);
+		 }
+		 
 	}
 
 }
