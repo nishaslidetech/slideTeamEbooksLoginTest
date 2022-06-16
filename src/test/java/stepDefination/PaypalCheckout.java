@@ -25,7 +25,7 @@ public class PaypalCheckout extends SetUPClass {
 	@Then("^click on signup buttoni$")
 	public void click_on_signup_buttoni() throws Throwable {
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		try {
 
 			WebElement Sign_Up = driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)"));
