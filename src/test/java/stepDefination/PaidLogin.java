@@ -18,6 +18,7 @@ public class PaidLogin extends SetUPClass {
 	public void user_is_on_team_Home_Pageii() throws Throwable {
 		driver.get(AppURL);
 		ClearBrowserCache();
+		Thread.sleep(5000);
 	}
 
 	@Then("click on signin butoon")
