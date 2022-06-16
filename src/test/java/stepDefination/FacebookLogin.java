@@ -21,7 +21,7 @@ public class FacebookLogin extends SetUPClass {
 		ClearfacebookCache();
 		driver.get(AppURL);
 	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 
 	@Then("^Click on ebook button$")
