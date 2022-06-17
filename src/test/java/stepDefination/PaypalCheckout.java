@@ -91,7 +91,7 @@ public class PaypalCheckout extends SetUPClass {
 		WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
 
 		new_btn_signup.click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 	}
 
 	@Then("^verify that user is successfully signupi$")
