@@ -16,6 +16,7 @@ public class PaidLogin extends SetUPClass {
 
 	@Given("^User is on team Home Pageii$")
 	public void user_is_on_team_Home_Pageii() throws Throwable {
+		Thread.sleep(3000);
 		driver.get(AppURL);
 		ClearBrowserCache();
 		Thread.sleep(5000);
