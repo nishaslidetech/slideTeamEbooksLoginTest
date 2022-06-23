@@ -49,8 +49,8 @@ public class SetUPClass {
 		System.out.println("Bname=====" + AppURL);
 
 		if ((local_chrome.equals("yes"))) {
-			WebDriverManager.chromedriver().browserVersion("98.0.4758.102").setup();
-			// WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().browserVersion("98.0.4758.102").setup();
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
 
