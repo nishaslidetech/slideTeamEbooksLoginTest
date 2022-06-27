@@ -90,6 +90,11 @@ public class GoogleLogin extends SetUPClass {
 
 			next_2.click();
 			Thread.sleep(6000);
+			if (!driver.findElements(By.xpath("//div[@class='login-attempt-popup']")).isEmpty()) {
+				WebElement approve = wait
+						.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='confirm-approve']")));
+				approve.click();
+			}
 		} catch (NoSuchElementException e) {
 
 		}
