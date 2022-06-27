@@ -103,6 +103,7 @@ public class GoogleLogin extends SetUPClass {
 
 	@Then("^download the selected ebbok$")
 	public void download_the_selected_ebbok() throws Throwable {
+		Thread.sleep(2000);
 		WebElement download = SetUPClass
 				.elementToBeClickable(By.xpath("//button[@class = 'buy-now-btn downloadClick']"));
 		download.click();
