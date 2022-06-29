@@ -9,7 +9,7 @@ import io.cucumber.java.Scenario;
 public class TakeImageStep extends SetUPClass {
 	@After
 	public void tearDown(Scenario scenario) {
-		public void tearDown(Scenario scenario) {
+	
 		if (scenario.isFailed()) {
 			//String screenshotName = scenario.getName().replaceAll(" ", "_");
 			try {
