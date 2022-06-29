@@ -9,11 +9,15 @@ import io.cucumber.java.Scenario;
 public class TakeImageStep extends SetUPClass {
 	@After
 	public void tearDown(Scenario scenario) {
+		public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
-			log.info("Scenario failed, now taking screenshot");
-			final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(screenshot, "image/png" , "my screenshot");
-			
+			//String screenshotName = scenario.getName().replaceAll(" ", "_");
+			try {
+				File srcPath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				byte[] newFile = FileUtils.readFileToByteArray(srcPath);
+				scenario.attach(newFile, "image/png", "screenshotName");
+			} catch (IOException e) {
+			}
 		}
 	}
 }
