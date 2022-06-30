@@ -9,6 +9,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,11 +50,11 @@ public class SetUPClass {
 		System.out.println("Bname=====" + AppURL);
 
 		if ((local_chrome.equals("yes"))) {
-			//WebDriverManager.chromedriver().browserVersion("98.0.4758.102").setup();
+			// WebDriverManager.chromedriver().browserVersion("98.0.4758.102").setup();
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
-
+			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 			options.addArguments("--incognito"); // DesiredCapabilities object
 			DesiredCapabilities c = DesiredCapabilities.chrome(); // set capability to
 			c.setCapability(ChromeOptions.CAPABILITY, options);
@@ -120,11 +121,11 @@ public class SetUPClass {
 	public static void after_Class() throws InterruptedException {
 		Thread.sleep(2000);
 
-		
-		 if (driver != null) {
-	         driver.quit(); Thread.sleep(2000);
-		 }
-		 
+		if (driver != null) {
+			driver.quit();
+			Thread.sleep(2000);
+		}
+
 	}
 
 }
