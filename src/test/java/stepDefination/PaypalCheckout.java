@@ -18,6 +18,7 @@ public class PaypalCheckout extends SetUPClass {
 
 	@Given("^Go to the team Home pagei$")
 	public void go_to_the_team_Home_pagei() throws Throwable {
+		Thread.sleep(5000);
 		driver.get(AppURL);
 		ClearBrowserCache();
 	}

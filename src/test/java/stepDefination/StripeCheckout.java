@@ -18,6 +18,7 @@ public class StripeCheckout extends SetUPClass {
 
 	@Given("^Go to the team Home page$")
 	public void go_to_the_team_Home_page() throws Throwable {
+		Thread.sleep(5000);
 		driver.get(AppURL);
 		ClearBrowserCache();
 	}

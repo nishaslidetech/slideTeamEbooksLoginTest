@@ -16,6 +16,7 @@ public class FreeLogin extends SetUPClass {
 
 	@Given("^User is on team Home Page$")
 	public void user_is_on_team_Home_Page() throws Throwable {
+		Thread.sleep(5000);
 		driver.get(AppURL);
 		ClearBrowserCache();
 		Thread.sleep(5000);
