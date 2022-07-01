@@ -50,11 +50,10 @@ public class SetUPClass {
 		System.out.println("Bname=====" + AppURL);
 
 		if ((local_chrome.equals("yes"))) {
-			// WebDriverManager.chromedriver().browserVersion("98.0.4758.102").setup();
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
-			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			// options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 			options.addArguments("--incognito"); // DesiredCapabilities object
 			DesiredCapabilities c = DesiredCapabilities.chrome(); // set capability to
 			c.setCapability(ChromeOptions.CAPABILITY, options);
@@ -65,15 +64,24 @@ public class SetUPClass {
 
 			// driver.get(AppURL);
 			driver.manage().timeouts().implicitlyWait(9000, TimeUnit.MILLISECONDS);
-			driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
-
+			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			wait = new WebDriverWait(driver, 30);
 			js = (JavascriptExecutor) driver;
 		}
+		// if (browser.equalsIgnoreCase("firefox"))
 
-		else
+		// if (browser.equalsIgnoreCase("chrome"))
+		else if ((local_FFbrowser.equals("yes"))) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(9000, TimeUnit.MILLISECONDS);
+			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			wait = new WebDriverWait(driver, 30);
+			js = (JavascriptExecutor) driver;
 
-		{
+			Thread.sleep(1000);
+		} else {
 
 			System.out.println("platform does not provide");
 		}

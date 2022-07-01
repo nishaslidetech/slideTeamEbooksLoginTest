@@ -18,6 +18,7 @@ public class GoogleLogin extends SetUPClass {
 
 	@Given("^user is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
+		Thread.sleep(5000);
 		driver.get(AppURL);
 		ClearBrowserCache();
 		Thread.sleep(5000);
