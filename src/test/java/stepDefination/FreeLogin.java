@@ -78,13 +78,14 @@ public class FreeLogin extends SetUPClass {
 	@Then("^Click on Buy Now button$")
 	public void click_on_Buy_Now_button() throws Throwable {
 
-		Thread.sleep(3000);
-		WebElement dropDown = wait.until(ExpectedConditions.elementToBeClickable(By.id("dk0-combobox")));
-		dropDown.click();
-		Thread.sleep(3000);
-		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='dk0-2']")));
-		name.click();
-		Thread.sleep(3000);
+		/*
+		 * Thread.sleep(3000); WebElement dropDown =
+		 * wait.until(ExpectedConditions.elementToBeClickable( By.
+		 * xpath("//div[@class='choices__item choices__placeholder choices__item--selectable']"
+		 * ))); dropDown.click(); Thread.sleep(3000); WebElement name =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+		 * "//li[@id='dk0-2']"))); name.click(); Thread.sleep(3000);
+		 */
 
 		// go to the eBooks details page and check the console error
 		WebElement selecteBook = wait
