@@ -20,7 +20,7 @@ public class FacebookLogin extends SetUPClass {
 	public void go_to_the_Home_page() throws Throwable {
 		ClearfacebookCache();
 		driver.get(AppURL);
-	
+
 		Thread.sleep(5000);
 	}
 
@@ -56,8 +56,8 @@ public class FacebookLogin extends SetUPClass {
 
 		try {
 			WebElement facebook = SetUPClass.elementToBeClickable(By.xpath(
-					"//div[@class = 'popup-register white-popup-block']//a[@class = 'btn btn-block btn-social btn-facebook social-btn']"));
-			facebook.click();
+					"//div[@id='ajaxlogin-create-window']//a[@class='btn btn-block popup-social-btn btn-social btn-facebook social-btn'][normalize-space()='Sign in with Facebook']"));
+			js.executeScript("arguments[0].click();", facebook);
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
@@ -97,7 +97,7 @@ public class FacebookLogin extends SetUPClass {
 				fb_login.click();
 				Thread.sleep(3000);
 			}
-			
+
 			if (!driver.findElements(By.xpath("//div[@class='login-attempt-popup']")).isEmpty()) {
 				WebElement approve = wait
 						.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='confirm-approve']")));

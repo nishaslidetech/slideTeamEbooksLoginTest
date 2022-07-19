@@ -1,5 +1,5 @@
 @Ebookstripe
-Feature: Ebooks Signup Login test
+Feature: Ebooks stripe Signup Login test
   Scenario: Ebooks Signup Login test
   Given Go to the team Home page 
   Then click on signup button

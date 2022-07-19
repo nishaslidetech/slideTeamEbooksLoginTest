@@ -1,6 +1,6 @@
 @EbooksPaypal
 
-Feature: Ebooks Signup Login test
+Feature: Ebooks paypal Signup Login test
   Scenario: Ebooks Signup Login test
   Given Go to the team Home pagei 
   Then click on signup buttoni

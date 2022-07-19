@@ -1,8 +1,8 @@
 @paidLogin
 
-Feature: Download Ebooks via free login
+Feature: Download Ebooks via paid login
 
-  Scenario: Download Ebooks via free login
+  Scenario: Download Ebooks via paid login
 
   Given User is on team Home Pageii
   Then click on signin butoon

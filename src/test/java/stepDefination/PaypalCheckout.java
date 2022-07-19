@@ -41,8 +41,10 @@ public class PaypalCheckout extends SetUPClass {
 	@Then("^user creates a new account$")
 	public void user_creates_a_new_account() throws Throwable {
 		Thread.sleep(5000);
+		// create new email for sign up
+
 		int leftLimit = 97; // letter 'a'
-		int rightLimit = 122;
+		int rightLimit = 122; // letter 'z'
 		int targetStringLength = 10;
 		Random random = new Random();
 		StringBuilder buffer = new StringBuilder(targetStringLength);
@@ -54,45 +56,60 @@ public class PaypalCheckout extends SetUPClass {
 
 		System.out.println(generatedString);
 
+		String signup_email = generatedString;
 		String full_email = "selenium.testing." + generatedString + "@gmail.com";
 		System.out.println(full_email);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// driver.findElement(By.id("email_address")).sendKeys(full_email);
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		WebElement new_email_signup = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email_address']")));
-
+		Thread.sleep(2000);
 		new_email_signup.sendKeys(full_email);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		// enter name
-		WebElement new_fname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("firstname")));
-		new_fname_signup.sendKeys("Selenium");
-		Thread.sleep(1000);
 
-		WebElement new_lname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("lastname")));
+		WebElement new_fname_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='firstname']")));
+		Thread.sleep(2000);
+		new_fname_signup.sendKeys("Selenium");
+		Thread.sleep(2000);
+
+		WebElement new_lname_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='lastname']")));
+		Thread.sleep(2000);
 		new_lname_signup.sendKeys("Testing");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		// enter password
-		WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password")));
+		WebElement new_pwd_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='password']")));
+		Thread.sleep(2000);
 		new_pwd_signup.sendKeys("selenium@123");
+		Thread.sleep(2000);
 
-		// verify the password
 		WebElement new_pwd1_signup = wait
-				.until(ExpectedConditions.elementToBeClickable(By.id("password-confirmation")));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='password-confirmation']")));
+		Thread.sleep(2000);
 		new_pwd1_signup.sendKeys("selenium@123");
+		Thread.sleep(2000);
 
-		// enter captcha
-		WebElement new_captcha_signup = wait
-				.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
-		new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
+		/*
+		 * // enter captcha WebElement new_captcha_signup = wait
+		 * .until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")))
+		 * ; Thread.sleep(2000); new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
+		 * Thread.sleep(2000);
+		 */
 
 		// sign up button
-		WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
-
+		WebElement new_btn_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Sign Up']")));
+		Thread.sleep(2000);
 		new_btn_signup.click();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+
 	}
 
 	@Then("^verify that user is successfully signupi$")
@@ -203,7 +220,7 @@ public class PaypalCheckout extends SetUPClass {
 		Thread.sleep(2000);
 		WebElement My_Account = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("My Account")));
 		js.executeScript("arguments[0].click();", My_Account);
-		
+
 		Thread.sleep(3000);
 		WebElement Delete_Account = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Delete Account']")));
