@@ -59,7 +59,7 @@ public class FacebookLogin extends SetUPClass {
 					"//div[@id='ajaxlogin-create-window']//a[@class='btn btn-block popup-social-btn btn-social btn-facebook social-btn'][normalize-space()='Sign in with Facebook']"));
 			js.executeScript("arguments[0].click();", facebook);
 			Thread.sleep(3000);
-			
+
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,13 +97,30 @@ public class FacebookLogin extends SetUPClass {
 
 				fb_login.click();
 				Thread.sleep(3000);
+
+				
 			}
 
-			if (!driver.findElements(By.xpath("//div[@class='login-attempt-popup']")).isEmpty()) {
+			if (!driver.findElements(By.xpath("//div[@id ='confirm_id']")).isEmpty()) {
 				WebElement approve = wait
 						.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='confirm-approve']")));
-				approve.click();
+				js.executeScript("arguments[0].click();", approve);
 				Thread.sleep(5000);
+
+				String verifyRegisteration = wait
+						.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@x-html='message.text']")))
+						.getText();
+				Thread.sleep(3000);
+				Assert.assertTrue("user is not logged in",
+						verifyRegisteration.contains("You have successfully logged in using your facebook account."));
+
+				Thread.sleep(3000);
+				WebElement eBooks = wait
+						.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='eBooks']")));
+				eBooks.click();
+				Thread.sleep(3000);
+				// span[@x-html='message.text']
+
 			}
 		} catch (NoSuchElementException e) {
 
