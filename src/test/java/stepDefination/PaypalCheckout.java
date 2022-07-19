@@ -246,8 +246,8 @@ public class PaypalCheckout extends SetUPClass {
 	@Then("^verify the account is successfully deletedi$")
 	public void verify_the_account_is_successfully_deletedi() throws Throwable {
 		// verify that wether the account is deleted or not?
-		String verifyDeleteAccount = wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']"))).getText();
+		String verifyDeleteAccount = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@x-html='message.text']"))).getText();
 		Thread.sleep(3000);
 		Assert.assertTrue("Account is not deleted",
 				verifyDeleteAccount.contains("Your account has been deleted successfully."));

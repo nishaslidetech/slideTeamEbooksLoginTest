@@ -59,6 +59,7 @@ public class FacebookLogin extends SetUPClass {
 					"//div[@id='ajaxlogin-create-window']//a[@class='btn btn-block popup-social-btn btn-social btn-facebook social-btn'][normalize-space()='Sign in with Facebook']"));
 			js.executeScript("arguments[0].click();", facebook);
 			Thread.sleep(3000);
+			
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
