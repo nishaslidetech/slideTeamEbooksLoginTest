@@ -68,6 +68,8 @@ public class GoogleLogin extends SetUPClass {
 	public void enter_valid_credentials() throws Throwable {
 		try {
 
+			
+			// paid accounts details
 			if (!driver.findElements(By.xpath("//div[@class='BHzsHc']")).isEmpty()) {
 				WebElement another_btn = SetUPClass
 						.elementToBeClickable(By.xpath("//div[text()='Use another account']"));
@@ -76,7 +78,7 @@ public class GoogleLogin extends SetUPClass {
 
 			WebElement gmail_email = SetUPClass.elementToBeClickable(By.xpath("//*[@id='identifierId']"));
 
-			gmail_email.sendKeys("slidetech.qa@gmail.com");
+			gmail_email.sendKeys("sumit.kumar@slidetech.in");
 
 			WebElement next_1 = driver.findElement(By.cssSelector("#identifierNext > div > button > span"));
 
@@ -85,7 +87,7 @@ public class GoogleLogin extends SetUPClass {
 			WebElement gmail_pass = wait.until(ExpectedConditions
 					.elementToBeClickable(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")));
 
-			gmail_pass.sendKeys("Himanshi@123");
+			gmail_pass.sendKeys("redhat2090");
 
 			WebElement next_2 = driver.findElement(By.cssSelector("#passwordNext > div > button > span"));
 
