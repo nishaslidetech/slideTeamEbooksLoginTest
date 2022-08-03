@@ -130,7 +130,7 @@ public class SetUPClass {
 		Thread.sleep(2000);
 
 		if (driver != null) {
-			//driver.quit();
+			driver.quit();
 			Thread.sleep(2000);
 		}
 
