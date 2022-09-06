@@ -43,7 +43,8 @@ public class FacebookLogin extends SetUPClass {
 			List<WebElement> buyNow = driver.findElements(By.xpath("//input[@class = 'buy-now-btn login-box']"));
 			// WebElement buyNow =
 			// SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
-			buyNow.get(1).click();
+			js.executeScript("arguments[0].click();", buyNow.get(0));
+			// buyNow.get(1).click();
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
@@ -98,7 +99,6 @@ public class FacebookLogin extends SetUPClass {
 				fb_login.click();
 				Thread.sleep(3000);
 
-				
 			}
 
 			if (!driver.findElements(By.xpath("//div[@id ='confirm_id']")).isEmpty()) {
