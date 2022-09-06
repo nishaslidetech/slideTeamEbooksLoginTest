@@ -42,7 +42,8 @@ public class GoogleLogin extends SetUPClass {
 			List<WebElement> buyNow = driver.findElements(By.xpath("//input[@class = 'buy-now-btn login-box']"));
 			// WebElement buyNow =
 			// SetUPClass.elementToBeClickable(By.xpath("//form[@id='addToCartForm-183671']//input[@name='Buy']"));
-			buyNow.get(0).click();
+			js.executeScript("arguments[0].click();", buyNow.get(0));
+			// buyNow.get(0).click();
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
@@ -68,7 +69,6 @@ public class GoogleLogin extends SetUPClass {
 	public void enter_valid_credentials() throws Throwable {
 		try {
 
-			
 			// paid accounts details
 			if (!driver.findElements(By.xpath("//div[@class='BHzsHc']")).isEmpty()) {
 				WebElement another_btn = SetUPClass
