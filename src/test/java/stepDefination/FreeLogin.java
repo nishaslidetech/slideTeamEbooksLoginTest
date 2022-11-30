@@ -41,11 +41,11 @@ public class FreeLogin extends SetUPClass {
 
 			Thread.sleep(3000);
 			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
-			email.sendKeys("nishadhiman0027@gmail.com");
+			email.sendKeys("slidetestebooks@mailinator.com");
 
 			WebElement password_field = wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
-			password_field.sendKeys("Qwerty@1");
+			password_field.sendKeys("123456");
 			WebElement login_btn = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Login']")));
 			login_btn.click();
