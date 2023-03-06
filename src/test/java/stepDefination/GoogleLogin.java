@@ -56,7 +56,8 @@ public class GoogleLogin extends SetUPClass {
 	public void click_on_google_option() throws Throwable {
 		try {
 			WebElement google = SetUPClass.elementToBeClickable(
-					By.xpath("//a[@class='btn btn-block btn-social popup-social-btn btn-google social-btn']]"));
+					By.xpath("//a[@class='btn btn-block btn-social popup-social-btn btn-google social-btn']"));
+			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", google);
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {
