@@ -55,8 +55,8 @@ public class GoogleLogin extends SetUPClass {
 	@Then("^click on google option$")
 	public void click_on_google_option() throws Throwable {
 		try {
-			WebElement google = SetUPClass.elementToBeClickable(By.xpath(
-					"//div[@id='ajaxlogin-create-window']//a[@class='btn btn-block popup-social-btn btn-social btn-google social-btn'][normalize-space()='Sign in with Google']"));
+			WebElement google = SetUPClass.elementToBeClickable(
+					By.xpath("//a[@class='btn btn-block btn-social popup-social-btn btn-google social-btn']]"));
 			js.executeScript("arguments[0].click();", google);
 			Thread.sleep(3000);
 		} catch (WebDriverException e) {

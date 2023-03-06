@@ -56,8 +56,8 @@ public class FacebookLogin extends SetUPClass {
 	public void click_on_facebook_option() throws Throwable {
 
 		try {
-			WebElement facebook = SetUPClass.elementToBeClickable(By.xpath(
-					"//div[@id='ajaxlogin-create-window']//a[@class='btn btn-block popup-social-btn btn-social btn-facebook social-btn'][normalize-space()='Sign in with Facebook']"));
+			WebElement facebook = SetUPClass.elementToBeClickable(
+					By.xpath("//a[@class='btn btn-block btn-social popup-social-btn btn-facebook social-btn']"));
 			js.executeScript("arguments[0].click();", facebook);
 			Thread.sleep(3000);
 
