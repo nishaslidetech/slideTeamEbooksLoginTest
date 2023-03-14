@@ -1,5 +1,7 @@
 package stepDefination;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -68,7 +70,7 @@ public class FreeLogin extends SetUPClass {
 		try {
 			WebElement eBooks = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("eBooks")));
 			eBooks.click();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		} catch (WebDriverManagerException e) {
 
 			e.printStackTrace();
@@ -88,9 +90,8 @@ public class FreeLogin extends SetUPClass {
 		 */
 
 		// go to the eBooks details page and check the console error
-		WebElement selecteBook = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//ul[1]/li[1]/div[1]/i[1]/a[1]/img[1]")));
-		selecteBook.click();
+		List<WebElement> selecteBook = driver.findElements(By.xpath("//div[@class = 'book-collection-inner']//img"));
+		selecteBook.get(1).click();
 		Thread.sleep(9000);
 
 		WebElement buyNow = SetUPClass.elementToBeClickable(By.xpath("//button[@class = 'buy-now-btn']"));
@@ -136,7 +137,7 @@ public class FreeLogin extends SetUPClass {
 		System.out.print("logout= " + verifySignOutMessage);
 
 		Assert.assertTrue("user is not logout from the application",
-				verifySignOutMessage.contains(verifySignOutMessage));
+				verifySignOutMessage.contains("YOU ARE NOW LOGGED OUT"));
 	}
 
 }
